@@ -1,0 +1,59 @@
+.privacy-policy {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  h1 {
+    font-size: 36px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  section {
+    margin-bottom: 60px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #666;
+  }
+  
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #888;
+  }
+  
+  footer {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .footer-text {
+    font-size: 14px;
+    color: #888;
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.8s ease-out;
+  }
+  

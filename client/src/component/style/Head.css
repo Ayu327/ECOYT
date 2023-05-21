@@ -1,0 +1,41 @@
+/* Navbar */
+.navbar {
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adding a shadow effect */
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+/* Left-aligned navigation links */
+.navbar-nav.ml-auto .nav-item {
+  margin-right: 10px;
+}
+
+.navbar-nav.ml-auto .nav-link {
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav.ml-auto .nav-link:hover {
+  color: #888;
+}
+
+/* Search form */
+.form-control {
+  border-radius: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adding a shadow effect */
+}
+
+.btn-outline-success {
+  border-radius: 0;
+}
+
+/* Optional: Adjustments for responsiveness */
+@media (max-width: 576px) {
+  .navbar-nav.ml-auto .nav-item {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}

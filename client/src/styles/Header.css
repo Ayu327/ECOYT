@@ -1,0 +1,44 @@
+/* Navbar */
+.navbar {
+    background-color: #f8f9fa;
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("path/to/your/icon.png");
+  }
+  
+  /* Left-aligned navigation links */
+  .navbar-nav.ml-auto .nav-item {
+    margin-right: 10px;
+  }
+  
+  .navbar-nav.ml-auto .nav-link {
+    color: #000;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-nav.ml-auto .nav-link:hover {
+    color: #888;
+  }
+  
+  /* Search form */
+  .form-control {
+    border-radius: 0;
+  }
+  
+  .btn-outline-success {
+    border-radius: 0;
+  }
+  
+  /* Optional: Adjustments for responsiveness */
+  @media (max-width: 576px) {
+    .navbar-nav.ml-auto .nav-item {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+  
