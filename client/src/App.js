@@ -9,6 +9,7 @@ import PageNotFound from './pages/PageNotFound';
 import Policy from './pages/Policy';
 import Header from './component/Layout/Header';
 import Footer from './component/Layout/Footer';
+import Register from './pages/Auth/Register';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path='/contact' element={<Contact/>}/>
       <Route path='/*' element={<PageNotFound/>}/>
       <Route path='/policy' element={<Policy/>}/>
+      <Route path='/register' element={<Register/>}/>
     </Routes>
    <Footer/>
     </>

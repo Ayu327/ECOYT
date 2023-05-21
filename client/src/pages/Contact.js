@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './style/Contact.css'
+import Layout from '../component/Layout/Layout';
 
 const Contact = () => {
   const [name, setName] = useState('');
@@ -13,6 +14,7 @@ const Contact = () => {
   };
 
   return (
+    <Layout title={"Contact Us"}>
     <form  className = "form" onSubmit={handleSubmit}>
       <div>
         <label htmlFor="name">Name:</label>
@@ -45,7 +47,9 @@ const Contact = () => {
       </div>
       <button type="submit">Submit</button>
     </form>
+    </Layout>
   );
+  
 };
 
 export default Contact;
