@@ -1,32 +1,32 @@
-import { useState } from "react";
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../../component/Layout/Layout";
 
-import "./RegisterStyle.css"
+import './RegisterStyle.css'
 const Register = () => {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [phone, setPhone] = useState("");
-    const [address, setAddress] = useState("");
-    const [answer, setAnswer] = useState("");
-    const navigate = useNavigate();
-  
-  
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+  const [answer, setAnswer] = useState("");
+
 
   // form function
- 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(name,email,password,phone,address,answer)
+    
+  };
 
   return (
     <Layout title="Register - Ecommer App">
       <div className="form-container" style={{ minHeight: "90vh" }}>
-        <form >
+        <form onSubmit={handleSubmit}>
           <h4 className="title">REGISTER FORM</h4>
           <div className="mb-3">
             <input
               type="text"
-              value={value}
-              
+              value={name}
               onChange={(e) => setName(e.target.value)}
               className="form-control"
               id="exampleInputEmail1"
@@ -38,7 +38,7 @@ const Register = () => {
           <div className="mb-3">
             <input
               type="email"
-             value={email}
+              value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="form-control"
               id="exampleInputEmail1"
@@ -71,7 +71,7 @@ const Register = () => {
           <div className="mb-3">
             <input
               type="text"
-             value={address}
+              value={address}
               onChange={(e) => setAddress(e.target.value)}
               className="form-control"
               id="exampleInputEmail1"
@@ -82,8 +82,8 @@ const Register = () => {
           <div className="mb-3">
             <input
               type="text"
-               value={answer}
-             onChange={(e) => setAnswer(e.target.value)}
+              value={answer}
+              onChange={(e) => setAnswer(e.target.value)}
               className="form-control"
               id="exampleInputEmail1"
               placeholder="What is Your Favorite sports"
@@ -100,3 +100,13 @@ const Register = () => {
 };
 
 export default Register;
+
+
+
+
+
+
+
+
+
+
