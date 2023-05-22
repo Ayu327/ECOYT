@@ -1,7 +1,7 @@
-import logo from './logo.svg';
+
 import {Routes,Route} from 'react-router-dom'
 import './App.css';
-import Layout from './component/Layout/Layout';
+
 import HomePage from './pages/HomePage';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -10,6 +10,8 @@ import Policy from './pages/Policy';
 import Header from './component/Layout/Header';
 import Footer from './component/Layout/Footer';
 import Register from './pages/Auth/Register';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (

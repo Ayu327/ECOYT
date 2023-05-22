@@ -1,7 +1,10 @@
 import React from 'react'
 
 import { Helmet } from "react-helmet";
-// import { Toaster } from "react-hot-toast";
+ 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Layout = ({ children, title, description, keywords, author }) => {
   return (
     <div>
@@ -14,7 +17,7 @@ const Layout = ({ children, title, description, keywords, author }) => {
       </Helmet>
   
       <main style={{ minHeight: "70vh" }}>
-        {/* <Toaster /> */}
+      <ToastContainer />
 
         {children}
       </main>

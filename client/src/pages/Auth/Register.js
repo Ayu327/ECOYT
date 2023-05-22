@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import Layout from "../../component/Layout/Layout";
+// import axios from "axios";
+// import { useNavigate } from "react-router-dom";
+import {toast} from 'react-toastify';
 
 import './RegisterStyle.css'
+
 const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -9,14 +13,13 @@ const Register = () => {
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
   const [answer, setAnswer] = useState("");
-
+  // const navigate = useNavigate();
 
   // form function
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(name,email,password,phone,address,answer)
-    
-  };
+    toast.success("registered successfully")
+  }
 
   return (
     <Layout title="Register - Ecommer App">
@@ -99,14 +102,5 @@ const Register = () => {
   );
 };
 
+
 export default Register;
-
-
-
-
-
-
-
-
-
-
