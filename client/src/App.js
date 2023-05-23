@@ -10,8 +10,8 @@ import Policy from './pages/Policy';
 import Header from './component/Layout/Header';
 import Footer from './component/Layout/Footer';
 import Register from './pages/Auth/Register';
-
-import 'react-toastify/dist/ReactToastify.css';
+import toast, { Toaster } from 'react-hot-toast';
+import Login from './pages/Auth/Login';
 
 function App() {
   return (
@@ -24,6 +24,7 @@ function App() {
       <Route path='/*' element={<PageNotFound/>}/>
       <Route path='/policy' element={<Policy/>}/>
       <Route path='/register' element={<Register/>}/>
+      <Route path='/login' element={<Login/>}/>
     </Routes>
    <Footer/>
     </>
