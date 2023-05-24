@@ -2,8 +2,10 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import '../style/Head.css';
 import {FaShoppingCart} from 'react-icons/fa'
+import { useAuth } from '../../Context/AuthContext';
 
 const Header = () => {
+  const[auth,setAuth] = useAuth()
   return (
  <>
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -17,12 +19,20 @@ const Header = () => {
       <li className="navbar-nav ms-auto mb-2 mb-lg-0">
         <NavLink className="nav-link " href="#">Home <span className="sr-only">(current)</span></NavLink>
       </li>
-      <li className="nav-item">
+   {
+    !auth.user ? (<>
+       <li className="nav-item">
         <NavLink to="/register" className="nav-link" href="#">register</NavLink>
       </li>
       <li className="nav-item">
         <NavLink to="/login" className="nav-link" href="#">Login</NavLink>
       </li>
+    </>) : (<>
+      <li className="nav-item">
+        <NavLink to="/login" className="nav-link" href="#">LogOut</NavLink>
+      </li>
+    </>)
+   }
       <li className="nav-item">
         <NavLink to="/cart" className="nav-link" href="#"><FaShoppingCart/>(0)</NavLink>
       </li>
