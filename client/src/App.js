@@ -13,6 +13,7 @@ import Register from './pages/Auth/Register';
 import toast, { Toaster } from 'react-hot-toast';
 import Login from './pages/Auth/Login';
 import Dashboard from './pages/user/Dashboard';
+import PrivateRoute from './component/Routes/Private';
 
 function App() {
   return (
@@ -26,7 +27,10 @@ function App() {
       <Route path='/policy' element={<Policy/>}/>
       <Route path='/register' element={<Register/>}/>
       <Route path='/login' element={<Login/>}/>
-      <Route path='/dashboard' element={<Dashboard/>}/>
+      <Route path='/dashboard' element={<PrivateRoute/>} >
+      <Route path="" element={<Dashboard/>}/>
+      </Route>
+     
     </Routes>
    <Footer/>
     </>
