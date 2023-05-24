@@ -6,6 +6,12 @@ import { useAuth } from '../../Context/AuthContext';
 
 const Header = () => {
   const[auth,setAuth] = useAuth()
+  const handleLogout = ()=>{
+    setAuth({
+      ...auth, user:null, token:''
+    })
+    localStorage.removeItem('auth')
+  }
   return (
  <>
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -29,7 +35,7 @@ const Header = () => {
       </li>
     </>) : (<>
       <li className="nav-item">
-        <NavLink to="/login" className="nav-link" href="#">LogOut</NavLink>
+        <NavLink onClick={handleLogout} to="/login" className="nav-link" href="#">LogOut</NavLink>
       </li>
     </>)
    }
