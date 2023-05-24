@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import '../style/Head.css';
 import {FaShoppingCart} from 'react-icons/fa'
 import { useAuth } from '../../Context/AuthContext';
+import { toast } from 'react-hot-toast';
 
 const Header = () => {
   const[auth,setAuth] = useAuth()
@@ -11,6 +12,7 @@ const Header = () => {
       ...auth, user:null, token:''
     })
     localStorage.removeItem('auth')
+    toast.success('Logout Succesfully')
   }
   return (
  <>

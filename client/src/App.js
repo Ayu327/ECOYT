@@ -12,6 +12,7 @@ import Footer from './component/Layout/Footer';
 import Register from './pages/Auth/Register';
 import toast, { Toaster } from 'react-hot-toast';
 import Login from './pages/Auth/Login';
+import Dashboard from './pages/user/Dashboard';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Route path='/policy' element={<Policy/>}/>
       <Route path='/register' element={<Register/>}/>
       <Route path='/login' element={<Login/>}/>
+      <Route path='/dashboard' element={<Dashboard/>}/>
     </Routes>
    <Footer/>
     </>
