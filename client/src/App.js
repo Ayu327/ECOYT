@@ -14,6 +14,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import Login from './pages/Auth/Login';
 import Dashboard from './pages/user/Dashboard';
 import PrivateRoute from './component/Routes/Private';
+import ForgotPassword from './pages/Auth/ForgotPassword';
 
 function App() {
   return (
@@ -29,7 +30,8 @@ function App() {
       <Route path='/login' element={<Login/>}/>
       <Route path='/dashboard' element={<PrivateRoute/>} >
       <Route path="" element={<Dashboard/>}/>
-      </Route>
+    </Route>
+    <Route path='/forgot-password' element={<ForgotPassword/>}/>
      
     </Routes>
    <Footer/>
