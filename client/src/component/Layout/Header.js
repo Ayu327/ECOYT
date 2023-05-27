@@ -9,7 +9,7 @@ const Header = () => {
   const[auth,setAuth] = useAuth()
   const handleLogout = ()=>{
     setAuth({
-      ...auth, user:null, token:''
+      ...auth, user:null, token:'',role: 0
     })
     localStorage.removeItem('auth')
     toast.success('Logout Succesfully')
@@ -26,6 +26,8 @@ const Header = () => {
     <ul className="navbar-nav ml-auto ">
       <li className="navbar-nav ms-auto mb-2 mb-lg-0">
         <NavLink className="nav-link " href="#">Home <span className="sr-only">(current)</span></NavLink>
+
+        
       </li>
    {
     !auth.user ? (<>
@@ -35,11 +37,39 @@ const Header = () => {
       <li className="nav-item">
         <NavLink to="/login" className="nav-link" href="#">Login</NavLink>
       </li>
-    </>) : (<>
-      <li className="nav-item">
-        <NavLink onClick={handleLogout} to="/login" className="nav-link" href="#">LogOut</NavLink>
-      </li>
-    </>)
+    </>) : (  <>
+                <nav className="navbar navbar-expand-lg navbar-light bg-light">
+     
+    
+      <div className="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul className="navbar-nav">
+        
+       
+          <li className="nav-item dropdown">
+            <NavLink className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {auth?.user?.name}
+            </NavLink>
+            <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <NavLink to={`/dashboard/${
+                            auth?.user?.role === 1 ? "admin" : "user"
+                          }`} className="dropdown-item" href="#action">DashBoard</NavLink>
+              <NavLink  onClick={handleLogout}
+                          to="/login" className="dropdown-item" href="#box1">Logout</NavLink>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+
+
+
+
+
+
+                
+                </>)
    }
       <li className="nav-item">
         <NavLink to="/cart" className="nav-link" href="#"><FaShoppingCart/>(0)</NavLink>

@@ -16,22 +16,35 @@ import Dashboard from './pages/user/Dashboard';
 import PrivateRoute from './component/Routes/Private';
 import ForgotPassword from './pages/Auth/ForgotPassword';
 
+import MyNavbar from './component/Layout/drop';
+import AdminRoute from './component/Routes/AdminRoute';
+import AdminDashBoard from './pages/Admin/AdminDashBoard';
+
+
+
 function App() {
   return (
     <>
     <Header/>
+
     <Routes>
       <Route path='/' element={<HomePage/>}/>
       <Route path='/about' element={<About/>}/>
       <Route path='/contact' element={<Contact/>}/>
+    
       <Route path='/*' element={<PageNotFound/>}/>
       <Route path='/policy' element={<Policy/>}/>
       <Route path='/register' element={<Register/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/dashboard' element={<PrivateRoute/>} >
-      <Route path="" element={<Dashboard/>}/>
-    </Route>
+      <Route path="user" element={<Dashboard/>}/>
+       </Route>
+
+       <Route path='/dashboard' element={<AdminRoute/>} >
+      <Route path="admin" element={<AdminDashBoard/>}/>
+       </Route>
     <Route path='/forgot-password' element={<ForgotPassword/>}/>
+  <Route path='/drop' element={<MyNavbar/>}/>
      
     </Routes>
    <Footer/>
