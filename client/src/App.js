@@ -19,6 +19,10 @@ import ForgotPassword from './pages/Auth/ForgotPassword';
 import MyNavbar from './component/Layout/drop';
 import AdminRoute from './component/Routes/AdminRoute';
 import AdminDashBoard from './pages/Admin/AdminDashBoard';
+import CreateCategory from './pages/Admin/CreateCategory';
+import CreateProduct from './pages/Admin/CreateProduct';
+import Orders from './pages/user/Orders';
+import Profile from './pages/user/Profile';
 
 
 
@@ -38,10 +42,14 @@ function App() {
       <Route path='/login' element={<Login/>}/>
       <Route path='/dashboard' element={<PrivateRoute/>} >
       <Route path="user" element={<Dashboard/>}/>
+      <Route path='user/orders' element={<Orders/>}/>
+      <Route path='user/profile' element={<Profile/>}/>
        </Route>
 
        <Route path='/dashboard' element={<AdminRoute/>} >
       <Route path="admin" element={<AdminDashBoard/>}/>
+      <Route path='admin/create-category' element={<CreateCategory/>}/>
+      <Route path='admin/create-product' element={<CreateProduct/>}/>
        </Route>
     <Route path='/forgot-password' element={<ForgotPassword/>}/>
   <Route path='/drop' element={<MyNavbar/>}/>
