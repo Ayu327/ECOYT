@@ -55,7 +55,32 @@ const CreateCategory = () => {
    const handleUpdate = async(e)=>{
     e.preventDefault()
     try{
-      console.log(e);
+   const {data} = await axios.put(`/api/v1/category/update-category/${selected._id}`,{name:updatedName})
+   if(data.success){
+    toast.success(`${updatedName} is updated`)
+    setSelected(null)
+    setUpdatedName("")
+    setVisible(false)
+    getAllCategory()
+   }else{
+    toast.error(data.message)
+   }
+    }catch(error){
+      toast.error('Something went wrong in getting category')
+    }
+    }
+
+  //handle delete category
+  const handledelete = async(pId)=>{
+    try{
+   const {data} = await axios.delete(`/api/v1/category/delete-category/${pId}`)
+   if(data.success){
+    toast.success(`${name} is deleted`)
+
+    getAllCategory()
+   }else{
+    toast.error(data.message)
+   }
     }catch(error){
       toast.error('Something went wrong in getting category')
     }
@@ -89,8 +114,8 @@ const CreateCategory = () => {
     
         <td key={c._id}>{c.name}</td>
         <td>
-          <button className='btn btn-primary ms-2' onClick={()=>{setVisible(true); setUpdatedName(c.name)}}>Edit</button>
-          <button className='btn btn-danger ms-2 '>Delete</button>
+          <button className='btn btn-primary ms-2' onClick={()=>{setVisible(true); setUpdatedName(c.name) ; setSelected(c)}}>Edit</button>
+          <button className='btn btn-danger ms-2 ' onClick={()=>{handledelete(c._id)}}>Delete</button>
         </td>
       
     </tr>
