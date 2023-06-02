@@ -2,12 +2,17 @@ import React from 'react'
 import Layout from '../../component/Layout/Layout'
 import AdminMenu from '../../component/Layout/AdminMenu'
 import { useEffect, useState } from 'react'
+import {Modal} from 'antd'
+
 import toast from "react-hot-toast";
 import axios from 'axios';
 import CategoryForm from '../../component/Form/CategoryForm';
 const CreateCategory = () => {
   const [categories,setcategories] = useState([]);
   const[name,setName] = useState("")
+  const [visible,setVisible] = useState(false)
+  const[selected,setSelected] = useState(null)
+  const[updatedName,setUpdatedName] = useState("")
 
   //handle Form
   const handleSubmit = async(e)=>{
@@ -27,6 +32,7 @@ const CreateCategory = () => {
     }
   }
 
+ 
 
   //get all cat
   const getAllCategory = async()=>{
@@ -44,6 +50,17 @@ const CreateCategory = () => {
   useEffect(()=>{
     getAllCategory()
   },[])
+
+   //handle update category
+   const handleUpdate = async(e)=>{
+    e.preventDefault()
+    try{
+      console.log(e);
+    }catch(error){
+      toast.error('Something went wrong in getting category')
+    }
+    }
+  
   return (
     <Layout title={"Dashboard - Create Category"}>
     <div className='container-fluid m-3 p-3'>
@@ -72,7 +89,8 @@ const CreateCategory = () => {
     
         <td key={c._id}>{c.name}</td>
         <td>
-          <button className='btn btn-primary'>Edit</button>
+          <button className='btn btn-primary ms-2' onClick={()=>{setVisible(true); setUpdatedName(c.name)}}>Edit</button>
+          <button className='btn btn-danger ms-2 '>Delete</button>
         </td>
       
     </tr>
@@ -83,6 +101,10 @@ const CreateCategory = () => {
 </table>
 
           </div>
+          <Modal onCancel={()=>setVisible(false)} footer={null}  open={visible}>
+          <CategoryForm value={updatedName} setValue={setUpdatedName} handleSubmit={handleUpdate}/>
+          </Modal>
+        
         </div>
       </div>
       
