@@ -3,6 +3,7 @@ import Layout from '../../component/Layout/Layout'
 import AdminMenu from '../../component/Layout/AdminMenu'
 import { useEffect, useState } from 'react'
 import {Modal} from 'antd'
+import './CreateCategory.css'
 
 import toast from "react-hot-toast";
 import axios from 'axios';
@@ -75,7 +76,7 @@ const CreateCategory = () => {
     try{
    const {data} = await axios.delete(`/api/v1/category/delete-category/${pId}`)
    if(data.success){
-    toast.success(`${name} is deleted`)
+    toast.success(`category is deleted`)
 
     getAllCategory()
    }else{
@@ -101,31 +102,26 @@ const CreateCategory = () => {
           <table className="table">
   <thead>
     <tr>
-      
       <th scope="col">Name</th>
-      <th scope="col">Actions</th>
-   
+      <th  className="action" scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
-  {categories?.map(c =>(
-    <>
-    <tr>
-    
-        <td key={c._id}>{c.name}</td>
+    {categories?.map(c => (
+      <tr key={c._id}>
+        <td>{c.name}</td>
         <td>
-          <button className='btn btn-primary ms-2' onClick={()=>{setVisible(true); setUpdatedName(c.name) ; setSelected(c)}}>Edit</button>
-          <button className='btn btn-danger ms-2 ' onClick={()=>{handledelete(c._id)}}>Delete</button>
-        </td>
-      
-    </tr>
-    </>
-    ))}
-  
-  </tbody>
-</table>
-
+          <div className="button-container-wrapper">
+            <div className="button-container">
+              <button className="btn btn-primary" onClick={() => {setVisible(true); setUpdatedName(c.name); setSelected(c);}}>Edit</button>
+              <button className="btn btn-danger" onClick={() => {handledelete(c._id);}}>Delete</button>
+            </div>
           </div>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>        </div>
           <Modal onCancel={()=>setVisible(false)} footer={null}  open={visible}>
           <CategoryForm value={updatedName} setValue={setUpdatedName} handleSubmit={handleUpdate}/>
           </Modal>
