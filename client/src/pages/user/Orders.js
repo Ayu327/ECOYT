@@ -3,7 +3,8 @@ import UserMenu from "../../component/Layout/UserMenu";
 import Layout from "../../component/Layout/Layout";
 import axios from "axios";
 import { useAuth } from "../../Context/AuthContext";
-// import moment from "moment";
+ import moment from "moment";
+ import "./Orders.css"
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
@@ -44,17 +45,17 @@ const Orders = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
+                      <tr >
                         <td>{i + 1}</td>
                         <td>{o?.status}</td>
                         <td>{o?.buyer?.name}</td>
-                        {/* <td>{moment(o?.createAt).fromNow()}</td> */}
+                        <td>{moment(o?.createAt).fromNow()}</td> 
                         <td>{o?.payment.success ? "Success" : "Failed"}</td>
                         <td>{o?.products?.length}</td>
                       </tr>
                     </tbody>
                   </table>
-                  <div className="container">
+                  <div className="container info" >
                     {o?.products?.map((p, i) => (
                       <div className="row mb-2 p-3 card flex-row" key={p._id}>
                         <div className="col-md-4">

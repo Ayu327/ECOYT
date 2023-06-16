@@ -1,0 +1,106 @@
+/* === HomePage.css === */
+.home-page {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 25%;
+  width: 100%;
+  justify-content: flex-start;
+  
+}
+
+.home-page .card {
+  background-color: rgba(128, 128, 128, 0.097);
+  width: 18rem;
+  /* margin-bottom: 40px; */
+/* Adjust this value to shift the product cards */
+ 
+ 
+}
+.fight{
+  margin-left: 6%; 
+  margin-top: 24%;
+}
+
+.home-page .card-name-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.home-page .card-price {
+  color: green;
+  font-weight: bold;
+}
+
+.home-page button {
+  border-radius: 0;
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin: 2%;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.home-page .card-text {
+  color: rgb(90, 89, 89);
+}
+
+.home-page .card img:hover {
+  transform: scale(0.9);
+}
+
+.home-page .card-img-top {
+  height: 300px !important;
+}
+
+.filter-section {
+  padding-right: 0;
+  width: 25%;
+  margin-top: 27%;
+  margin-left: 2%; /* Adjust this value to shift the category filter */
+}
+
+.filter-section .ant-checkbox-group,
+.filter-section .ant-radio-group {
+  margin-bottom: 10px;
+}
+
+.filter-section .btn-danger {
+  margin-top: 10px;
+}
+
+.loadmore {
+  color: green;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.custom-slider .slick-dots {
+  position: absolute;
+  bottom: 20px; /* Adjust this value to shift the dots higher */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* === Layout.css === */
+.layout-content {
+  margin-left: 280px; /* Adjust this value to create space for the filters */
+}
+
+@media (max-width: 768px) {
+  .filters {
+    margin-top: 20px;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .layout-content {
+    margin-left: 0;
+  }
+}

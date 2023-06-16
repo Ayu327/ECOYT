@@ -36,7 +36,7 @@ export const CreateCategoryController = async(req,res)=>{
 export const updateCategoryController = async (req, res) => {
     try {
       const { name } = req.body;
-      const { id } = req.params;
+      const { id } = req.params; //url se milegi
       const category = await categoryModel.findByIdAndUpdate(
         id,
         { name, slug: slugify(name) },

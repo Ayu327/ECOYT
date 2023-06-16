@@ -1,0 +1,49 @@
+/* CategoryProductStyles.css */
+
+.container {
+  margin-top: 3rem;
+}
+
+.category {
+  text-align: center;
+}
+
+.card {
+  width: 60%; /* Adjust the width to display three cards in a row */
+  margin: 0.5rem;
+}
+
+.card-img-top {
+  height: 200px; /* Adjust the desired height for the card image */
+  object-fit: cover; /* Make sure the image fills the container without distortion */
+}
+
+.card-name-price {
+  display: flex;
+  flex-direction: column; /* Display title above price */
+  align-items: center;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-price {
+  font-size: 1.2rem;
+}
+
+.card-text {
+  margin-top: 1rem;
+}
+
+.btn-info {
+  margin-top: 0.5rem; /* Adjust the margin as needed */
+}
+
+/* Media Query for responsiveness */
+@media (max-width: 767px) {
+  .card {
+    width: 100%; /* Display one card per row on smaller screens */
+  }
+}
